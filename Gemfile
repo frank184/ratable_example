@@ -43,3 +43,6 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
 end
+
+gem 'ratable', path: '~/Desktop/ratable'
+gem 'colorize'

@@ -1,0 +1,9 @@
+<div>
+  <span class="rating" data-rating="<%= rating.value %>" data-rating-id="<%= rating.id %>"></span>
+  &nbsp;
+  <% if rating.rater.present? %>
+    <span class="post-meta"><%= link_to rating.rater.email.presence || 'annonymous', user_path(rating.rater) %></span>
+  <% else %>
+    <span class="post-meta">anonymous</span>
+  <% end %>
+</div>

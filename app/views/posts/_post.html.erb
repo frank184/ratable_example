@@ -1,0 +1,20 @@
+<div id="post_<%= post.id %>" class="post post-preview" data-post-id="<%= post.id%>">
+    <%= link_to post_path(post) do %>
+      <h2 class="post-title">
+          <%= post.title %>
+      </h2>
+      <h3 class="post-subtitle">
+          <%= post.description %>
+      </h3>
+    <% end %>
+    <p class="post-meta">
+      Posted by <%= link_to post.user.email, user_path(post.user) %> on <%= post.created_at.strftime('%B %d, %Y') %>
+    </p>
+    <%= render post.rating_average %>
+    <hr>
+    Latest Ratings:
+    <div class="latest-ratings">
+      <%= render post.ratings.limit(3) %>
+    </div>
+</div>
+<hr>
