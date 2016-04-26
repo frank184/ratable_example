@@ -1,5 +1,8 @@
 var $post = $('#post_<%= @post.id %>'),
     $latestRatings = $post.find('.latest-ratings');
 $latestRatings.prepend('<%= j render @rating %>');
-var $latestRating = $latestRatings.find('.rating').first();
+var $ratings = $latestRatings.find('.rating');
+var $latestRating = $ratings.first();
+var $lastRating = $ratings.last();
+$lastRating.parent().remove();
 Rating($latestRating);
