@@ -1,8 +1,14 @@
-var $post = $('#post_<%= @post.id %>'),
-    $latestRatings = $post.find('.latest-ratings');
+var $post = $('#post_<%= @post.id %>');
+var $latestRatings = $post.find('.latest-ratings');
+
 $latestRatings.prepend('<%= j render @rating %>');
 var $ratings = $latestRatings.find('.rating');
 var $latestRating = $ratings.first();
 var $lastRating = $ratings.last();
 $lastRating.parent().remove();
 Rating($latestRating);
+
+$currentRating = $post.find('.current-rating')
+$currentRating.html('<%= j render @post.rating_average %>');
+$ratingAverage = $currentRating.find('.rating-average');
+RatingAverage($ratingAverage);

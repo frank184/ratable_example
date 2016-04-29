@@ -23,7 +23,7 @@ function Rating($rating) {
 function RatingAverage($rating_average) {
   $rating_average.raty({
     size: 24,
-    score: $this.data('rating'),
+    score: $rating_average.data('rating'),
     scoreName: 'star',
     space: true,
     starHalf: '<%= image_path('star-half-big.png') %>',
