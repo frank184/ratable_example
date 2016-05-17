@@ -6,8 +6,9 @@ require 'pp'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: '.yellow << user.email.to_s.green
+# user = CreateAdminService.new.call
+user = User.new(email: 'user@mail.com', password: 'password')
+puts user.save ? 'CREATED USER: '.yellow << user.email.to_s.green : 'COULD NOT CREATE USER: '.yellow << user.email.to_s.green
 
 
 posts = Array.new
@@ -51,7 +52,7 @@ posts.each do|post|
   puts saved ? "Saved!".light_green : "Didn't Save!".red
   if saved
     puts 'CREATING RATINGS'.yellow
-    n = (1..10).to_a.sample
+    n = rand(1..10)
     n.times do
       rater = [user, nil].sample
       value = (1..5).to_a.sample
