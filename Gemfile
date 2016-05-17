@@ -7,21 +7,18 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+
 group :development, :test do
   gem 'byebug'
 end
+
 group :development do
+  gem 'mysql2', '~> 0.3.18'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'bootstrap-sass'
-gem 'devise'
-gem 'high_voltage'
-gem 'mysql2', '~> 0.3.18'
-gem 'simple_form'
-gem 'thin'
+
 group :development do
-  gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
@@ -32,11 +29,13 @@ group :development do
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
@@ -44,5 +43,16 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'ratable', path: '~/Desktop/ratable'
+group :production do
+  gem 'pg','0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'high_voltage'
+gem 'simple_form'
+gem 'thin'
+
+gem 'ratable'
 gem 'colorize'
